@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        body{
+            background-image: url(backdrop.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .main{
+            background-color: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.281);
+            justify-content: center;
+            align-items: center;
+            width: 260px;
+            /* margin:20% ; */
+            border-radius: 20PX;
+        }
+       
+        .main input{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            color:white;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 8PX;
+            border: transparent;
+            border-radius: 8PX;
+            transition: all 0.3s ease;
+        }
+        #demo-name{
+            text-transform: capitalize;
+        }
+        
+        .main input:hover{
+           box-shadow: 0 0 10px rgba(148, 0, 211, 0.541);
+            border: transparent;
+            transform: translateY(-2px);
+        }
+        .main input:focus{
+            outline: none;
+            border: transparent;
+        }
+        .main button{
+            display: block;
+            margin: 0 auto;
+        }
+        .main h1{
+            font-size: 30px;
+        }
+        .main P ,H1{
+            color: darkmagenta;
+            font-weight: 900;
+            text-align: center;
+            font-size: 25PX;
+        }
+        .main button{
+            margin-bottom: 13px;
+            background:linear-gradient(135deg,#4b0082,#6a0dad);
+            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.562);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            width: 80%;
+            padding: 8PX 12px;
+            border-radius: 8PX;
+            border:  transparent;
+            transition: all 0.3s ease;
+        }
+        .main button:hover{
+            cursor: pointer;
+            transform: translateY(-1px);
+            border: 1px solid rgba(106,13,173,0.4);
+            box-shadow: 0 6px 20px rgba(106,13,173,0.6);
+        }
+        .main .clear-butn{
+            cursor: pointer;
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,2550.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.575);
+        }
+        /* Mobile View Code  */
+@media screen and (max-width: 480px) {
+    .main {
+        width: 90%; 
+        max-width: 320px; 
+        margin: 20px auto; 
+        padding: 20px;
+        backdrop-filter: blur(8px);
+    }
+
+    h1 {
+        font-size: 22px; 
+    }
+
+    .main input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .main button {
+        width: 100%; 
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+         <h1>GRADE CHECKER</h1> 
+         <P>____________&#9733____________</P>
+        <input type="text" id="demo-name" placeholder="enter your name">
+        <input type="number"  id="result" placeholder="enter your marks">
+        <h1 id="grade"></h1>
+        <button onclick="check()">Check grade</button>
+        <button class="clear-butn" onclick="clearInput()">CLEAR</button>
+    </div>
+    <script>
+        function check(){
+            let marks=document.getElementById('result').value;
+            
+            if (marks>=80 &&marks<=100)
+           {
+            document.getElementById('grade').innerHTML="A1";
+           }
+        else if(marks>=70 && marks<80)
+           {
+          document.getElementById('grade').innerHTML="A";
+           }
+        else if(marks>=60 && marks<70)
+            {
+            document.getElementById('grade').innerHTML="B";
+            }
+        else if(marks>=50 && marks<60)
+           {
+          document.getElementById('grade').innerHTML="C";
+           }
+        else if(marks<50 && marks>=0)
+           {
+            document.getElementById('grade').innerHTML="Fail";
+           }
+        else
+           {
+            document.getElementById('grade').innerHTML="invalid input";
+           }
+        }
+        function clearInput()
+          {
+           document.getElementById('demo-name').value="";
+           document.getElementById('result').value="";
+           document.getElementById('grade').innerHTML="";
+          }
+
+    </script>
+    
+</body>
+</html>

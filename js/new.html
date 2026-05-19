@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="userMarks" placeholder="enter your marks">
+    <button onclick="startChecking()">yes/ checkgrade</button>
+    <button onclick="stopChecking()">No/Exit</button>
+    <script>
+        let input=true;
+        function startChecking(){
+            input=true;
+            while(input){
+                let Marks=document.getElementById('userMarks').value;
+                if(Marks=== ""){
+                    alert('enter your marks');
+                }
+                else if(Marks>=80 && Marks<=100){
+                    alert('A1')
+                }
+                else if(Marks>=70 && Marks<=80){
+                    alert('A')
+                }
+                else if(Marks>=60 && Marks<=70){
+                    alert('B')
+                }
+                else if (Marks>=50 && Marks<=60){
+                    alert('C')
+                }
+                else if(Marks<50 && Marks>=0){
+                    alert('Fail')
+                }
+                else{
+                    alert('invalid input')
+                }
+                break;
+
+            }
+        }
+        function stopchecking(){
+            input=false;
+            alert('exit');
+        }
+    </script>
+    
+</body>
+</html>

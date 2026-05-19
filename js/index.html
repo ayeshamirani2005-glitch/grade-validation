@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="rowinput" />
+    <button onclick="generatepattern()">Generate</button>
+    <script>
+      function generatepattern() {
+        let row = document.getElementById("rowinput").value;
+
+        for (let i = 1; i <= row; i++) {
+          let pattern = "";
+          for (let j = 1; j <= row - i; j++) {
+            pattern += " ";
+          }
+          for (let k = 1; k <= i; k++) {
+            pattern += "*" + " ";
+          }
+          console.log(pattern);
+        }
+      }
+    </script>
+  </body>
+</html>
